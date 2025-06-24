@@ -1,0 +1,69 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local ProximityPromptService = game:GetService("ProximityPromptService")
+
+local Window = Rayfield:CreateWindow({
+   Name = "Blair Script V1",
+   Icon = "cross",
+   LoadingTitle = "epic blair script",
+   LoadingSubtitle = "by PizzaBloxer",
+   Theme = "Default",
+
+   DisableRayfieldPrompts = true,
+   DisableBuildWarnings = false,
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "Blair"
+   },
+
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Verification System",
+      Subtitle = "Guess the key!1!11!",
+      Note = "Hint: BlairDevs____",
+      FileName = "Key",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = {"BlairDevsSuck"}
+   }
+})
+local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
+local Tab2 = Window:CreateTab("Exploits", 4483362458) -- Title, Image
+local Cursed = Tab:CreateLabel("Cursed Object: Tarot Cards", 4483362458, Color3.fromRGB(0, 255, 0), false) -- Title, Icon, Color, IgnoreTheme
+local FingerPrinties = Tab:CreateLabel("Ultra Violet: Waiting...", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local GorbGorb = Tab:CreateLabel("Ghost Orbs: No", 4483362458, Color3.fromRGB(255, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Activity = Tab:CreateLabel("Activity: ???", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Button2 = Tab:CreateButton({
+   Name = "Teleport to van",
+   Callback = function()
+   TP = game.Workspace.Map.Van.Primary
+   playr = game.Players.LocalPlayer
+   playr.Character:MoveTo(TP.CFrame.Position)
+end,
+})
+local Button5 = Tab2:CreateButton({
+   Name = "Spawn Boo-Boo Dolls",
+   Callback = function()
+   remoteEvent = game.ReplicatedStorage.Remotes.BooBooSpawnRemote
+remoteEvent:FireServer()
+end,
+})
+while wait(0.1) do
+   if game.Workspace:FindFirstChild("SummoningCircle") then
+   Cursed:Set("Cursed Object: Summoning Circle", 4483362458, Color3.fromRGB(0, 255, 0), false) -- Title, Icon, Color, IgnoreTheme
+end
+   if game.Workspace:FindFirstChild("Spirit Board") then
+   Cursed:Set("Cursed Object: Ouija Board", 4483362458, Color3.fromRGB(0, 255, 0), false) -- Title, Icon, Color, IgnoreTheme
+end
+   if game.Workspace.Map.Prints:FindFirstChild("UV_Hand") or game.Workspace.Map.Prints:FindFirstChild("UV_Fingerprint") then
+   FingerPrinties:Set("Ultra Violet: Yes", 4483362458, Color3.fromRGB(0, 255, 0), false) -- Title, Icon, Color, IgnoreTheme
+end
+   Activity:Set("Activity: " .. game.ReplicatedStorage.Activity.Value, 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+end
