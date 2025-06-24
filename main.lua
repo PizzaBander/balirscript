@@ -40,6 +40,7 @@ local Cursed = Tab:CreateLabel("Cursed Object: Tarot Cards", 4483362458, Color3.
 local FingerPrinties = Tab:CreateLabel("Ultra Violet: Waiting...", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 local GorbGorb = Tab:CreateLabel("Ghost Orbs: No", 4483362458, Color3.fromRGB(255, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 local Activity = Tab:CreateLabel("Activity: ???", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local GhostOrbs = false
 local Button2 = Tab:CreateButton({
    Name = "Teleport to van",
    Callback = function()
@@ -66,4 +67,7 @@ end
    FingerPrinties:Set("Ultra Violet: Yes", 4483362458, Color3.fromRGB(0, 255, 0), false) -- Title, Icon, Color, IgnoreTheme
 end
    Activity:Set("Activity: " .. game.ReplicatedStorage.Activity.Value, 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+end
+   if game.Workspace.Map.Orbs:FindFirstChild("OrbPart") then
+   GorbGorb:Set("Ghost Orbs: Yes", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 end
