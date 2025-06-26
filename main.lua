@@ -66,7 +66,6 @@ local Toggle = Tab2:CreateToggle({
    if v.Name = "BooBooDoll" then
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
                wait(0.1)
-               fireproximityprompt(v:WaitForChild("ProximityPrompt"))
 end
          end
    end,
